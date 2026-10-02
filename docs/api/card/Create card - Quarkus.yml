@@ -1,0 +1,17 @@
+info:
+  name: "Create card - Quarkus"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "http://localhost:8001/api/cards"
+  body:
+    type: json
+    json: |-
+      {
+        "card_name": "lightning bolt"
+      }
+
+settings:
+  encodeUrl: true

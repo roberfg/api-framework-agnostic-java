@@ -1,0 +1,17 @@
+info:
+  name: "Create card - Spring Boot"
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "http://localhost:8002/api/cards"
+  body:
+    type: json
+    json: |-
+      {
+        "card_name": "path to exile"
+      }
+
+settings:
+  encodeUrl: true

@@ -1,17 +1,17 @@
-package cl.stringmachine.infra.quarkus.config;
+package cl.stringmachine.infra.spring.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import cl.stringmachine.card.core.application.port.out.CardRepository;
 import cl.stringmachine.card.core.application.port.out.CardSearchPort;
 import cl.stringmachine.card.core.application.service.CardService;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.ws.rs.Produces;
 
-@ApplicationScoped
+@Configuration
 public class CoreConfig {
 
-	@Produces
-	@ApplicationScoped
-	public CardService cardService(CardRepository cardRepository, CardSearchPort cardSearchPort) {
+	@Bean
+	CardService cardService(CardRepository cardRepository, CardSearchPort cardSearchPort) {
 		return new CardService(cardRepository, cardSearchPort);
 	}
 }
